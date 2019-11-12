@@ -1,11 +1,11 @@
 <template>
-    <div id = "body">
+    <div id="body">
     <b-container class="bv-example-row">
       <b-row id = "row">
-        <b-col>
+        <b-col cols="7">
 
         </b-col>
-        <b-col id="top" cols = "8">
+        <b-col id="top" cols = "5">
 
         <b-form @submit="onSubmit">
           <b-form-group id="input-group-0" label="Username" label-for="input-0">
@@ -28,9 +28,9 @@
         </b-form>
         
         </b-col>
-        <b-col>
+        <!-- <b-col>
 
-        </b-col>
+        </b-col> -->
       </b-row>
     </b-container>
   </div>
@@ -85,13 +85,21 @@ export default {
 <style scoped lang="scss">
 @import "~assets/colors.scss";
 #top{
-  background-color: $bckg_color !important;
-	padding: 3vw 4vw 5vw;
-  border-radius: 4px;
-  box-shadow: 2px 5px 16px 2px rgba(16, 16, 16, 0.18);
-  text-align: center;
-  margin-top: 60px;
+    background-color: $bckg_color !important;
+    padding: 3vw 4vw 5vw;
+    border-radius: 4px;
+    box-shadow: 2px 5px 16px 2px rgba(16, 16, 16, 0.18);
+    text-align: center;
+    margin-top: 13%;
+//   width: 50%;
+    margin-left: 20%;
 }
-/* #login {length: 20px; } */
+#body {
+  background-image: url("~assets/background.png");
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  padding-right: 60px;
+}
 
 </style>

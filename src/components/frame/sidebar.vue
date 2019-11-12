@@ -24,7 +24,13 @@
                     {
                         href: '/dashboard',
                         title: 'Dashboard',
-                        icon: 'fa fa-user'
+                        icon: 'fa fa-user',
+                        child: [
+                            {
+                                href: '/timeline',
+                                title: 'Timeline'
+                            }
+                        ]
                     },
                     {
                         href: '/personalinformation',

@@ -15,6 +15,14 @@ export default {
         }
 
     }, {
+        path: '/HomePage',
+        name: 'HomePage',
+        component: resolve => require(['modules/basic/Register&LoginPage.vue'], resolve),
+        meta: {
+            tokenRequired: false
+        }
+
+    }, {
         path: '/dashboard',
         name: 'dashboard',
         component: resolve => require(['modules/basic/Dashboard.vue'], resolve),
@@ -46,6 +54,13 @@ export default {
         path: '/confirmLogout',
         name: 'logout',
         component: resolve => require(['modules/basic/confirmLogout.vue'], resolve),
+        meta: {
+            tokenRequired: true
+        }
+    }, {
+        path: '/timeline',
+        name: 'timeline',
+        component: resolve => require(['modules/basic/timeline.vue'], resolve),
         meta: {
             tokenRequired: true
         }

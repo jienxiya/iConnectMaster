@@ -20,12 +20,13 @@ export default {
     login(email, password) {
         for (let i = 0; i < this.registeredUser.length; i++) {
             if (this.registeredUser[i].email === email && this.registeredUser[i].password === password) {
-                ROUTER.push('/dashboard')
-                this.setUser(email)
-                return this.registeredUser[i]
+                this.setUser(email);
+                ROUTER.push('/dashboard');
+                return this.registeredUser[i];
             } else {
                 alert("Email or Password is incorrect!")
             }
+            
         }
         return null
     },
