@@ -1,30 +1,38 @@
 <template>
     <div id="body">
-    <b-container class="bv-example-row">
-      <b-row id = "row">
-        <b-col cols="7">
+    <b-container>
+      <b-row id="row">
+        <b-col>
 
         </b-col>
-        <b-col id="top" cols = "5">
+        <b-col id="top" cols="7">
 
         <b-form @submit="onSubmit">
-          <b-form-group id="input-group-0" label="Username" label-for="input-0">
-            <b-form-input id="input-0" v-model="form.username" type="text" required placeholder="Username"></b-form-input>
+          <center>
+            <h1>Sign In</h1>
+            <p><b><i>Get account for free</i></b></p>
+            <div>
+              <img src="~assets/logoTrans.png"/>
+            </div>
+          </center>
+          <b-form-group id="input-group-0" label="Username:" label-for="input-0">
+            <b-form-input class="input" id="input-0" v-model="form.username" type="text" required placeholder="Username"></b-form-input>
           </b-form-group>
 
-          <b-form-group id="input-group-1" label="Email" label-for="input-1">
-            <b-form-input id="input-1" v-model="form.email" type="email" required placeholder="Email"></b-form-input>
+          <b-form-group id="input-group-1" label="Email:" label-for="input-1">
+            <b-form-input class="input" id="input-1" v-model="form.email" type="email" required placeholder="Email"></b-form-input>
           </b-form-group>
 
-          <b-form-group id="input-group-2" label="Password" label-for="input-2">
-            <b-form-input id="input-2" v-model="form.password" required placeholder="Password" type="password"></b-form-input>
+          <b-form-group id="input-group-2" label="Password:" label-for="input-2">
+            <b-form-input class="input" id="input-2" v-model="form.password" required placeholder="Password" type="password"></b-form-input>
           </b-form-group>
           
-          <b-form-group id="input-group-3" label="ConfirmPassword" label-for="input-3">
-            <b-form-input id="input-3" v-model="form.confirmPassword" required placeholder="Confirm Password" type="password"></b-form-input>
+          <b-form-group id="input-group-3" label="Confirm Password:" label-for="input-3">
+            <b-form-input class="input" id="input-3" v-model="form.confirmPassword" required placeholder="Confirm Password" type="password"></b-form-input>
           </b-form-group>
 
-          <b-button id="login" block variant="primary" type="submit">Sign Up</b-button><br>
+          <center><p>By clicking Sign Up, you agree to our <a href="#">Terms & Conditions</a></p>
+          <b-button id="login" type="submit">Sign Up</b-button></center><br>
         </b-form>
         
         </b-col>
@@ -83,23 +91,28 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "~assets/colors.scss";
+@import "~assets/color.scss";
 #top{
-    background-color: $bckg_color !important;
-    padding: 3vw 4vw 5vw;
-    border-radius: 4px;
+    background-color: white;
+    padding: 2vw 3vw 4vw;
+    border-radius: 7px;
     box-shadow: 2px 5px 16px 2px rgba(16, 16, 16, 0.18);
-    text-align: center;
-    margin-top: 13%;
-//   width: 50%;
-    margin-left: 20%;
+    margin-top: 10%;
+    margin-bottom: 3%;
+    margin-left: 56%;
+}
+.input{
+  border-color: $motif;
 }
 #body {
-  background-image: url("~assets/background.png");
+  background-image: url("~assets/b2.png");
   background-size: cover;
   background-attachment: fixed;
-  height: 100vh;
-  padding-right: 60px;
+  height: 100%;
+}
+#login{
+  background-color: $motif;
+  width: 30%;
 }
 
 </style>
