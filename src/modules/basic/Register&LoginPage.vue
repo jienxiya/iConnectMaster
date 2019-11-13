@@ -1,7 +1,6 @@
 <template>
     <div id="body">
     <b-container fluid>
-      <!-- <div class="container"> -->
       <b-row id="row">
         <b-col>
 
@@ -34,14 +33,9 @@
 
           <center><p>By clicking Sign Up, you agree to our <a href="#">Terms & Conditions</a></p>
           <b-button id="login" type="submit">Sign Up</b-button></center><br>
-        </b-form>
-        
+        </b-form>  
         </b-col>
-        <!-- <b-col>
-
-        </b-col> -->
       </b-row>
-      <!-- </div> -->
     </b-container>
   </div>
 </template>
@@ -49,7 +43,6 @@
 <script>
 import AUTH from 'services/auth'
 import $ from 'jquery'
-// import ROUTER from 'router'
 export default {
   data() {
     return {
@@ -111,8 +104,6 @@ export default {
   background-image: url("~assets/f.png");
   background-size: cover;
   background-attachment: fixed;
-  // height: 100%;
-  // width: 100%;
 }
 #login{
   background-color: $motif;

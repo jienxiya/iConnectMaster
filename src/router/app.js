@@ -1,20 +1,6 @@
 export default {
     routes: [{
-        path: '/login',
-        name: 'login',
-        component: resolve => require(['modules/basic/Login.vue'], resolve),
-        meta: {
-            tokenRequired: false
-        }
-    }, {
-        path: '/register',
-        name: 'register',
-        component: resolve => require(['modules/basic/Register.vue'], resolve),
-        meta: {
-            tokenRequired: false
-        }
-
-    }, {
+        
         path: '/HomePage',
         name: 'HomePage',
         component: resolve => require(['modules/basic/Register&LoginPage.vue'], resolve),
@@ -33,34 +19,6 @@ export default {
         path: '/personalinformation',
         name: 'personalinformation',
         component: resolve => require(['modules/basic/PersonalInfo.vue'], resolve),
-        meta: {
-            tokenRequired: true
-        }
-    }, {
-        path: '/courses',
-        name: 'courses',
-        component: resolve => require(['modules/basic/course.vue'], resolve),
-        meta: {
-            tokenRequired: true
-        }
-    }, {
-        path: '/edit',
-        name: 'edit',
-        component: resolve => require(['modules/basic/EditProfile.vue'], resolve),
-        meta: {
-            tokenRequired: true
-        }
-    }, {
-        path: '/confirmLogout',
-        name: 'logout',
-        component: resolve => require(['modules/basic/confirmLogout.vue'], resolve),
-        meta: {
-            tokenRequired: true
-        }
-    }, {
-        path: '/timeline',
-        name: 'timeline',
-        component: resolve => require(['modules/basic/timeline.vue'], resolve),
         meta: {
             tokenRequired: true
         }

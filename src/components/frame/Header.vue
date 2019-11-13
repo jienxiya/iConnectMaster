@@ -10,7 +10,7 @@
           <b-nav-item v-on:click="redirect('/login')" v-if="auth.user === null">Login</b-nav-item> -->
           <!-- <b-button size="sm" class="my-2 my-sm-0" type="submit" v-on:click="redirect('/register')"  id="register">Register</b-button>&nbsp;&nbsp;&nbsp; -->
             <b-form-input class="input" placeholder="Email"></b-form-input>&nbsp;&nbsp;&nbsp;
-            <b-form-input class="input" placeholder="Password"></b-form-input>&nbsp;&nbsp;&nbsp;
+            <b-form-input  class="input" placeholder="Password"></b-form-input>&nbsp;&nbsp;&nbsp;
           <b-button type="submit" v-on:click="redirect('/login')" id="login">Login</b-button>
         </b-navbar-nav>
       </b-collapse>
