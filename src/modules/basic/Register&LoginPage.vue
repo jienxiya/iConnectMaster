@@ -1,18 +1,19 @@
 <template>
     <div id="body">
-    <b-container>
+    <b-container fluid>
+      <!-- <div class="container"> -->
       <b-row id="row">
         <b-col>
 
         </b-col>
-        <b-col id="top" cols="7">
+        <b-col id="top" cols="6">
 
         <b-form @submit="onSubmit">
           <center>
             <h1>Sign In</h1>
             <p><b><i>Get account for free</i></b></p>
             <div>
-              <img src="~assets/logoTrans.png"/>
+              <img src="~assets/logoTrans.png" fluid/>
             </div>
           </center>
           <b-form-group id="input-group-0" label="Username:" label-for="input-0">
@@ -40,6 +41,7 @@
 
         </b-col> -->
       </b-row>
+      <!-- </div> -->
     </b-container>
   </div>
 </template>
@@ -97,18 +99,20 @@ export default {
     padding: 2vw 3vw 4vw;
     border-radius: 7px;
     box-shadow: 2px 5px 16px 2px rgba(16, 16, 16, 0.18);
-    margin-top: 10%;
-    margin-bottom: 3%;
-    margin-left: 56%;
+    margin-top: 8%;
+    margin-bottom: 3%;  
+    margin-left: 3%;
+    margin-right: 3%;
 }
 .input{
   border-color: $motif;
 }
 #body {
-  background-image: url("~assets/b2.png");
+  background-image: url("~assets/f.png");
   background-size: cover;
   background-attachment: fixed;
-  height: 100%;
+  // height: 100%;
+  // width: 100%;
 }
 #login{
   background-color: $motif;
