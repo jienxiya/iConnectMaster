@@ -1,6 +1,6 @@
 export default {
     routes: [{
-        
+            
         path: '/HomePage',
         name: 'HomePage',
         component: resolve => require(['modules/basic/Register&LoginPage.vue'], resolve),

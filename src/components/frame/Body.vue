@@ -1,12 +1,12 @@
 <template>
   <div id="lawas">
-    <div v-if="auth.user !== null">
+    <!-- <div v-if="auth.user !== null">
       <sideBar></sideBar>
         <transition>
           <router-view></router-view>
         </transition>
-    </div>
-    <div v-else>
+    </div> -->
+    <div>
       <transition>
         <router-view></router-view>
       </transition>
@@ -17,12 +17,12 @@
 </style>
 
 <script>
-import sideBar from "components/frame/sidebar.vue";
+// import sideBar from "components/frame/sidebar.vue";
 import AUTH from 'services/auth'
 export default {
   name: "lawas",
   components: {
-    sideBar
+    // sideBar
   },
   data(){
       return{ 

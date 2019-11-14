@@ -6,7 +6,7 @@ let beforeEnter = (to, from, next) => {
         if (AUTH.user !== null) {
             next()
         } else {
-            next({ path: '/login' })
+            next({ path: '/Homepage' })
         }
     } else {
         next()

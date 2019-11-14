@@ -17,13 +17,13 @@
   </div>
 </template>
 <style lang='scss' scoped>
-// @import "~assets/colors.scss";
+@import "~assets/colors.scss";
 #card {
   margin-top: 10%;
 }
 #userIcon {
-  // width: $userIconWidth !important;
-  // height: $userIconHeight !important;
+  width: $userIconWidth !important;
+  height: $userIconHeight !important;
 }
 </style>
 

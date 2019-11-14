@@ -15,7 +15,8 @@ export default {
         })
         // var p = JSON.parse(JSON.stringify(this.registeredUser))
         // console.log(p)
-        ROUTER.push('/login')
+        this.setUser(email);
+        ROUTER.push('/dashboard')
     },
     login(email, password) {
         for (let i = 0; i < this.registeredUser.length; i++) {
