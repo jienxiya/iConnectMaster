@@ -9,9 +9,9 @@
           <!-- <b-nav-item v-on:click="redirect('/register')" v-if="auth.user === null">Sign Up</b-nav-item>
           <b-nav-item v-on:click="redirect('/login')" v-if="auth.user === null">Login</b-nav-item> -->
           <!-- <b-button size="sm" class="my-2 my-sm-0" type="submit" v-on:click="redirect('/register')"  id="register">Register</b-button>&nbsp;&nbsp;&nbsp; -->
-            <b-form-input class="input" placeholder="Email"></b-form-input>&nbsp;&nbsp;&nbsp;
-            <b-form-input  class="input" placeholder="Password"></b-form-input>&nbsp;&nbsp;&nbsp;
-          <b-button type="submit" v-on:click="redirect('/login')" id="login">Login</b-button>
+            <b-form-input class="input" v-model="form.username" type="email" required placeholder="Email"></b-form-input>&nbsp;&nbsp;&nbsp;
+            <b-form-input  class="input" v-model="form.password" type="password" required placeholder="Password"></b-form-input>&nbsp;&nbsp;&nbsp;
+          <b-button v-on:click="onSubmit" id="login">Login</b-button>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -26,11 +26,20 @@ export default {
   data() {
     return {
       auth: AUTH,
+      form:{
+        username: "",
+        password: ""
+      }
     };
   },
   methods: {
-    redirect(route) {
-      ROUTER.push(route);
+    // redirect(route) {
+    //   ROUTER.push(route);
+    // }
+    onSubmit(e){
+      e.preventDefault();
+      AUTH.login();
+
     }
   }
 };

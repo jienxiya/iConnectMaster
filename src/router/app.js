@@ -22,6 +22,13 @@ export default {
         meta: {
             tokenRequired: true
         }
+    }, {
+        path: '/Messaging',
+        name: 'Messaging',
+        component: resolve => require(['modules/basic/Messaging.vue'], resolve),
+        meta: {
+            tokenRequired: false
+        }
     }
 
     ]
