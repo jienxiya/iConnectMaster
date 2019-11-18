@@ -59,7 +59,9 @@
   }
   #login{
     background:$motif;
+    height: 39px;
   }
+  
   .input{
     border-color:$motif;
   }

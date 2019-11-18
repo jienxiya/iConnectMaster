@@ -13,6 +13,7 @@
       </div>
       <h2>Hi {{Uname}}</h2>
       <p>Welcome to the Dashboard</p>
+      <b-button v-on:click="redirect('/authorizationForm')" variant="primary">Connect</b-button>
     </center>
   </div>
 </template>
@@ -28,6 +29,7 @@
 </style>
 
 <script>
+import ROUTER from "router"
 export default {
   name: "card",
   data() {
@@ -39,7 +41,9 @@ export default {
 
   },
   methods: {
-
+    redirect(route){
+      ROUTER.push(route);
+    }
   }
 };
 </script>

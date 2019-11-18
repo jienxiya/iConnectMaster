@@ -9,7 +9,7 @@
 
         <b-form @submit="onSubmit">
           <center>
-            <h1>Sign In</h1>
+            <h1>Sign Up</h1>
             <p><b><i>Get account for free</i></b></p>
             <div>
               <img src="~assets/logoTrans.png" fluid/>

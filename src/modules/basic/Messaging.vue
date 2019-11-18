@@ -4,7 +4,9 @@
             <b-row>
                 <!-- column 1 -->
                 <b-col>
-                    <h1>Recent Contacts: </h1>
+                    <center>
+                        <h1>Recent Contacts: </h1>
+                    </center>
                 </b-col>
                 <!-- column 2 -->
                 <b-col>
@@ -18,3 +20,13 @@
         </b-container>
     </div>
 </template>
+<script>
+export default {
+    data(){
+        return{
+            name: "cha"
+        }
+    }
+}
+</script>
+

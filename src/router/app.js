@@ -23,11 +23,11 @@ export default {
             tokenRequired: true
         }
     }, {
-        path: '/Messaging',
-        name: 'Messaging',
-        component: resolve => require(['modules/basic/Messaging.vue'], resolve),
+        path: '/authorizationForm',
+        name: 'authorizationForm',
+        component: resolve => require(['modules/basic/authPage.vue'], resolve),
         meta: {
-            tokenRequired: false
+            tokenRequired: true
         }
     }
 
