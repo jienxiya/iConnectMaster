@@ -20,7 +20,7 @@
                     <b-card-text class="side">[Subject]</b-card-text><br>
 
                     <b-card-text class="side"><b>To whom it may concern:</b></b-card-text>
-                    <b-card-text class="side">I {{Uname}} hereby authorize ________________ permission to process and
+                    <b-card-text class="side">I ________________ hereby authorize <p>________________</p> permission to process and
                       collect my ________________ in my behalf. To expedite the process, I've included Identification
                       information for verification needs. 
                     </b-card-text>
@@ -37,7 +37,7 @@
                 </div><br><br>    
                 <div>
                   <b-button  v-b-modal.modalForm id="fillUp">Fill Up</b-button>
-                  <b-button v-b-modal.sendToModal id="sendTo">Send To</b-button>
+                  <b-button v-b-modal.sendToModal id="sendTo">Send</b-button>
                 </div>
             </b-col>
             <b-col cols="1">
@@ -55,40 +55,39 @@
     <b-modal size="lg" scrollable id="modalForm" ref="modal" title="Please Fill Up Everything" @show="resetModal" @hidden="resetModal" @ok="handleOk">
       <form ref="form" @submit.stop.prevent="handleSubmit">
         <!-- Sender's Credentials -->
-        <b-form-group :state="nameState" label="Sender's Full Name" label-for="yourName" invalid-feedback="Sender's Full Name is required">
-          
-          <b-form-input class="borderColor" id="yourName" v-model="yourName" :state="nameState" required placeholder="Sender's Full Name"></b-form-input>
+        <b-form-group :state="nameState" label="Sender's Full Name" label-for="yourName" invalid-feedback="Sender's Full Name is required">         
+          <b-form-input class="borderColor" id="yourName" v-model="info.yourName" :state="nameState" required placeholder="Sender's Full Name"></b-form-input>
         </b-form-group>
         <b-form-group :state="nameState" label="Sender's Address" label-for="yourAddress" invalid-feedback="Address is required">
-          <b-form-input class="borderColor" id="yourAddress" v-model="yourAddress" :state="nameState" required placeholder="Sender's Current Address"></b-form-input>
+          <b-form-input class="borderColor" id="yourAddress" v-model="info.yourAddress" :state="nameState" required placeholder="Sender's Current Address"></b-form-input>
         </b-form-group>
          <b-form-group :state="nameState" label="Sender's State/ZIP Code" label-for="zip" invalid-feedback="State/Zip Code is required">
-          <b-form-input class="borderColor" id="zip" v-model="zip" :state="nameState" required placeholder="State/ZIP Code"></b-form-input>
+          <b-form-input class="borderColor" id="zip" v-model="info.zip" :state="nameState" required placeholder="State/ZIP Code"></b-form-input>
         </b-form-group>
         <!-- Date from & Date to -->
          <b-form-group :state="nameState" label="Current Date" label-for="currentDate" invalid-feedback="Date is required">
-          <b-form-input class="borderColor" id="currentDate" v-model="currentDate" :state="nameState" required placeholder="Current Date"></b-form-input>
+          <b-form-input class="borderColor" id="currentDate" v-model="info.currentDate" :state="nameState" required placeholder="Current Date"></b-form-input>
         </b-form-group>
         <b-form-group :state="nameState" label="Due Date" label-for="dueDate" invalid-feedback="Date is required">
-          <b-form-input class="borborderColorder" id="dueDate" v-model="dueDate" :state="nameState" required placeholder="Due Date"></b-form-input>
+          <b-form-input class="borderColor" id="dueDate" v-model="info.dueDate" :state="nameState" required placeholder="Due Date"></b-form-input>
         </b-form-group>
         <!-- Recipient's Credentials -->
          <b-form-group :state="nameState" label="Recipient's Full Name" label-for="recName" invalid-feedback="Recipient's Full Name is required">
-          <b-form-input class="borderColor" id="recName" v-model="recName" :state="nameState" required placeholder="Recipient's Full Name"></b-form-input>
+          <b-form-input class="borderColor" id="recName" v-model="info.recName" :state="nameState" required placeholder="Recipient's Full Name"></b-form-input>
         </b-form-group>
          <b-form-group :state="nameState" label="Recipient's Address" label-for="recAddress" invalid-feedback="Recipient's Address is required">
-          <b-form-input class="borderColor" id="recAddress" v-model="recAddress" :state="nameState" required placeholder="Recipient's Address"></b-form-input>
+          <b-form-input class="borderColor" id="recAddress" v-model="info.recAddress" :state="nameState" required placeholder="Recipient's Address"></b-form-input>
         </b-form-group>
          <b-form-group :state="nameState" label="Recipient's State/ZIP Code" label-for="recZip" invalid-feedback="Recipient's State/Zip Code is required">
-          <b-form-input class="borderColor" id="recZip" v-model="recZip" :state="nameState" required placeholder="Recipient's State/Zip Code"></b-form-input>
+          <b-form-input class="borderColor" id="recZip" v-model="info.recZip" :state="nameState" required placeholder="Recipient's State/Zip Code"></b-form-input>
         </b-form-group>
         <!-- Subject -->
          <b-form-group :state="nameState" label="Subject" label-for="subject" invalid-feedback="Subject is required">
-          <b-form-input class="borderColor" id="subject" v-model="subject" :state="nameState" required placeholder="Subject"></b-form-input>
+          <b-form-input class="borderColor" id="subject" v-model="info.subject" :state="nameState" required placeholder="Subject"></b-form-input>
         </b-form-group>
         <!-- Types of Documents -->
          <b-form-group :state="nameState" label="Types of Document/s" label-for="doc" invalid-feedback="Type of Document is required">
-          <b-form-input class="borderColor" id="doc" v-model="doc" :state="nameState" required placeholder="e.g Birth Certificate"></b-form-input>
+          <b-form-input class="borderColor" id="doc" v-model="info.doc" :state="nameState" required placeholder="e.g Birth Certificate"></b-form-input>
         </b-form-group>
       </form>
     </b-modal>
@@ -97,7 +96,7 @@
       <b-modal id="sendToModal" centered title="Recepient's Email">
         <form>
           <b-form-group label="Email" label-for="email" invalid-feedback="Email is required">
-            <b-form-input class="borderColor" id="email" v-model="email" :state="nameState" required placeholder="e.g you@gmail.com"></b-form-input>
+            <b-form-input class="borderColor" id="email" :state="nameState" required placeholder="e.g you@gmail.com"></b-form-input>
           </b-form-group>
         </form>
       </b-modal>
@@ -114,16 +113,20 @@ export default {
   name: "authForm",
   data() {
     return {
-      yourName: '',
-      yourAddress: '',
-      zip:'',
-      currentDate:'',
-      dueDate:'',
-      recName:'',
-      recAddress:'',
-      recZip:'',
-      subject:'',
-      doc:'',
+      info: {
+        yourName: '',
+        yourAddress: '',
+        zip:'',
+        currentDate:'',
+        dueDate:'',
+        recName:'',
+        recAddress:'',
+        recZip:'',
+        subject:'',
+        doc:''
+      },
+      senderName:'',
+      infos:[],
       nameState: null,
       submittedNames: [],
       modalShow: false
@@ -133,6 +136,21 @@ export default {
 
   },
   methods: {
+    replaceData(){
+      var object = {
+        yourName: this.info.yourName ,
+        yourAddress: this.info.yourAddress,
+        zip: this.info.zip,
+        currentDate: this.info.currentDate,
+        dueDate: this.info.dueDate,
+        recName:this.info.recName,
+        recAddress: this.info.recAddress,
+        recZip: this.info.recZip,
+        subject: this.info.subject,
+        doc:this.info.doc 
+      }
+      this.infos.push(object)
+    },
     checkFormValidity() {
         const valid = this.$refs.form.checkValidity()
         this.nameState = valid ? 'valid' : 'invalid'
@@ -147,6 +165,20 @@ export default {
         bvModalEvt.preventDefault()
         // Trigger submit handler
         this.handleSubmit()
+        //replace data
+        var object = {
+        yourName: this.info.yourName ,
+        yourAddress: this.info.yourAddress,
+        zip: this.info.zip,
+        currentDate: this.info.currentDate,
+        dueDate: this.info.dueDate,
+        recName:this.info.recName,
+        recAddress: this.info.recAddress,
+        recZip: this.info.recZip,
+        subject: this.info.subject,
+        doc:this.info.doc 
+      }
+      this.infos.push(object)
       },
       handleSubmit() {
         // Exit when the form isn't valid
