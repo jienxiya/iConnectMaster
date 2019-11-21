@@ -10,7 +10,7 @@
               <b-form-input id="searchBar" required placeholder="Search Location"></b-form-input>
               
             </b-form-group>
-            <b-button v-on:click="redirect('/authorizationForm')" variant="primary">Connect</b-button>
+            <b-button v-on:click="redirect('/authorizationForm')" id="connectBtn">Connect</b-button>
           </b-tab>
       <!-- Tab 2 -->
           <b-tab title="Activities">
@@ -66,6 +66,10 @@
   float: right;
   border-color: $motif;
 }
+#connectBtn{
+  background-color: $motif;
+}
+
 
 
 
