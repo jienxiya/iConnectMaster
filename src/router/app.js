@@ -34,7 +34,7 @@ export default {
         name: 'dashboardPartneredUser',
         component: resolve => require(['modules/basic/DashboardPartneredUser.vue'], resolve),
         meta: {
-            tokenRequired: true
+            tokenRequired: false
         }
     }
 

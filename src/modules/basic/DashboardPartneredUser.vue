@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="cardBody">
-      <b-card id="card" no-body>
+      <b-card id="cardWhole" no-body>
         <b-tabs active-nav-item-class="font-weight-bold text-uppercase text-default" card>
           <!-- Tab 1 -->
           <b-tab title="Online Users" active>
@@ -14,21 +14,19 @@
                 <b-row>
                     <b-col cols="4">
                         <center>
-                            <div>
-                                <b-card id="user" no-body class="overflow-hidden" style="max-width: 540px;">
+                            <div id="card">
                                     <b-row no-gutters>
                                     <b-col md="5">
-                                        <b-card-img src="~assets/user.png" class="rounded-0"></b-card-img>
+                                       <b-card-img :src="require('assets/user.png')" id="userIcon" class="rounded-0"></b-card-img>
                                     </b-col>
                                     <b-col md="7">
                                         <b-card-body>
-                                            <b-card-text>Mary Jane C. Paller</b-card-text>
-                                            <b-card-text>Concepcion, Danao, Bohol</b-card-text>
+                                            <b-form-input class="card" plaintext="true" value="Mary Jane Paller"></b-form-input><br>
+                                            <b-form-input class="card" plaintext="true" value="Danao, Bohol"></b-form-input><br>
                                             <b-button v-on:click="redirect('/authorizationForm')" id="connectBtn">Connect</b-button>
                                         </b-card-body>
                                     </b-col>
                                     </b-row>
-                                </b-card>
                             </div>
                         </center>
                     </b-col>
@@ -40,7 +38,6 @@
                     </b-col>
                 </b-row>
             </b-container>
-            <!-- <b-button v-on:click="redirect('/authorizationForm')" id="connectBtn">Connect</b-button> -->
           </b-tab>
       <!-- Tab 2 -->
           <b-tab title="Activities">
@@ -57,7 +54,7 @@
                       <i id="searchIcon" class="fa fa-search fa_custom fa-2x"></i>
                       <b-form-input id="tracking" required placeholder="e.g 123456789012"></b-form-input>
                   </b-form-group>
-                  <b-card id="card" scrollable>
+                  <b-card id="cardTracking" scrollable>
                   </b-card>
                 </b-col>
                 <b-col cols="2">
@@ -109,7 +106,14 @@
 }
 #card{
   border-color: $motif;
+  box-shadow: 3px 5px 15px 3px #888888;
+  border-radius: 7px;
 }
+.card{
+  text-align: center;
+  border-color: $motif;
+}
+
 #searchBar{
   width: 30%;
   float: right;
@@ -118,10 +122,6 @@
 #searchIcon{
   float: right;
   margin-left: 5px;
-}
-#user{
-    width: 420px;
-    border-color: $motif;
 }
 #tracking{
   width: 90%;
@@ -136,6 +136,11 @@
 }
 .motif{
     border-color: $motif;
+}
+#userIcon{
+  height:160px;
+  margin-top: 18%;
+  width: auto;
 }
 
 
