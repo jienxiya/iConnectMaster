@@ -41,7 +41,13 @@
           </b-tab>
       <!-- Tab 2 -->
           <b-tab title="Activities">
-            <b-card-text>Tab contents 2</b-card-text>
+            <div v-for="(item,index) in data" :key="index">
+              <b-card>
+                <b-card-text>{{item.account_id}}</b-card-text>
+                <b-card-text>{{item.fName}}</b-card-text>
+                <b-card-text>{{item.lName}}</b-card-text>
+              </b-card>
+            </div>
           </b-tab>
           <!-- TAb 3 -->
           <b-tab title="Track">
@@ -67,6 +73,41 @@
     </div>
   </div>
 </template>
+
+<script>
+import ROUTER from "router"
+export default {
+  name: "cardBody",
+  mounted(){
+    this.managePusher();
+  },
+  data() {
+    return {
+      data:[]
+    };
+  },
+  component: {
+
+  },
+  methods: {
+    redirect(route){
+      ROUTER.push(route);
+    },
+    managePusher(){
+      let user = {
+        account_id:1
+      }
+      var channel = this.$pusher.subscribe('my-channel');
+      channel.bind('my-event', ({data}) => {
+        if(parseInt(data.account_id) == user.account_id){
+          this.data.unshift(data)
+        }
+      });
+    }
+  },
+};
+</script>
+
 <style lang='scss' scoped>
 @import "~assets/color.scss";
 #cardBody {
@@ -119,23 +160,3 @@
 
 
 </style>
-
-<script>
-import ROUTER from "router"
-export default {
-  name: "cardBody",
-  data() {
-    return {
-      Uname: sessionStorage.getItem("Username")
-    };
-  },
-  component: {
-
-  },
-  methods: {
-    redirect(route){
-      ROUTER.push(route);
-    }
-  }
-};
-</script>
